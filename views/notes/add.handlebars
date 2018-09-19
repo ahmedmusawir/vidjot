@@ -1,0 +1,16 @@
+{{#each errors}}
+<div class="alert alert-danger">{{text}}</div>
+{{else}}
+{{/each}}
+<div class="card card-body">
+  <h3>Add Note</h3>
+  <form action="/notes" method="post">
+    <div class="form-group">
+      <input type="text" class="form-control" name="title" placeholder="Note Title" required>
+    </div>
+    <div class="form-group">
+      <textarea type="text" class="form-control" name="details" rows="10" placeholder="Note Details" required></textarea>
+    </div>
+    <button class="btn btn-success" type="submit">Submit</button>
+  </form>
+</div>
