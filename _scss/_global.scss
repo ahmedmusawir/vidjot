@@ -1,0 +1,118 @@
+/*=============================
+=            TOOLS            =
+=============================*/
+
+@import 'bower_components/compass-sass-mixins/lib/compass';
+@import 'custom.scss'; //Boostrap 4 Variable Override
+@import 'bower_components/bootstrap/scss/bootstrap.scss';
+@import 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css';
+@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css';
+
+/*=====  End of TOOLS  ======*/
+
+/*=============================
+=            FONTS            =
+=============================*/
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700');
+
+$primary-font: 'Quicksand', serif;
+$secondary-font: 'Quicksand', serif;
+
+/*=====  End of FONTS  ======*/
+
+/*======================================
+=            GLOBAL CONTENT            =
+======================================*/
+
+html {
+  // display: none;
+}
+
+body {
+  font-family: $secondary-font;
+
+  p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    color: darken($cg-secondary, 15%);
+    font-family: $secondary-font;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    color: lighten($cg-secondary, 15%);
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    font-family: $primary-font;
+    font-weight: 700;
+
+    @media (min-height: 800px) {
+      // padding-top: 1rem;
+      // padding-bottom: 1rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    // h1 {
+    // 	font-size: 3.5rem !important;
+    // }
+    // h2 {
+    // 	font-size: 3.0rem;
+
+    // }
+    // h3 {
+    // 	font-size: 2.5rem;
+
+    // }
+    // h4 {
+    // 	font-size: 2.25rem;
+
+    // }
+    // h5 {
+    // 	font-size: 1.5rem;
+
+    // }
+  }
+
+  @media (max-width: 1130px) {
+    // padding-top: 50px;
+  }
+
+  @media (max-width: 768px) {
+    // padding-top: 70px;
+  }
+
+  @media (max-width: 450px) {
+    // padding-top: 75px;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+a {
+  text-decoration: none !important;
+  color: lighten($cg-secondary, 10%);
+
+  &:hover {
+    color: lighten($cg-secondary, 20%);
+  }
+}
+
+/*=====  End of GLOBAL CONTENT  ======*/
+
+/*==================================================
+=            MOBILE WHITE SPACE REMOVAL            =
+==================================================*/
+
+html,
+body {
+}
+
+/*=====  End of MOBILE WHITE SPACE REMOVAL  ======*/

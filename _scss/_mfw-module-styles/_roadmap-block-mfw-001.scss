@@ -1,0 +1,39 @@
+/**
+ *
+ * Info Block 001
+ *
+ */
+
+#roadmap-block-mfw-001 {
+	width: 100vw;
+ 	// height: 90vh;
+ 	// background-color: $cg-extra-1; 
+ 	// border: 1rem solid red;
+ 	@media (max-width: 500px) {
+ 		width: 100%;
+ 		height: auto;
+ 	} 	
+
+ 	.block-content {
+ 		padding-top: 6rem;
+ 		padding-bottom: 6rem;
+
+ 		.block-title {
+ 			font-size: 4rem;
+ 			padding-bottom: 4rem;
+ 			color: lighten($cg-secondary, 10%);
+ 		}
+ 		.roadmap-content {
+ 			i {
+ 				font-size: 6rem;
+ 				color: lighten($cg-secondary, 10%);
+ 				&:hover {
+	 				color: lighten($cg-secondary, 20%);
+ 				}
+ 			}
+ 			.title {
+ 				color: $cg-secondary;
+ 			}
+ 		}
+ 	}
+}

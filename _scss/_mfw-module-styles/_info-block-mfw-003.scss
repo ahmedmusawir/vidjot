@@ -1,0 +1,31 @@
+/**
+ *
+ * Info Block 001
+ *
+ */
+
+#info-block-mfw-003 {
+	width: 100vw;
+ 	// background-color: darken($cg-primary, 10%); 
+ 	@media (max-width: 500px) {
+ 		width: 100%;
+ 		height: auto;
+ 	} 	
+
+ 	.block-content {
+ 		padding-top: 6rem;
+ 		padding-bottom: 6rem;
+ 		color: lighten($cg-secondary, 20%);
+
+ 		.block-title {
+ 			font-size: 4rem;
+ 			padding-bottom: 4rem;
+ 			color: lighten($cg-secondary, 10%);
+ 		}
+ 		.info-content {
+ 			color: lighten($cg-secondary, 10%);
+ 		}
+ 
+ 	}
+
+}

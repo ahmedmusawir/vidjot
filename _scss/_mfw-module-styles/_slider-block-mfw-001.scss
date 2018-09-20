@@ -1,0 +1,60 @@
+/**
+ *
+ * Slider Block 001
+ *
+ */
+
+
+#slider-block-mfw-001 {
+	width: 100vw;
+ 	height: 100vh;
+
+	background: url("/wp-content/uploads/2018/02/slider-block-1920x1200.jpg") no-repeat center center fixed;
+
+	  -webkit-background-size: cover;
+
+	  -moz-background-size: cover;
+
+	  -o-background-size: cover;
+
+	  background-size: cover;		
+
+	.slider-holder {
+		// padding-top: 10rem;
+		position: relative;
+
+		.home-slider {
+
+			.slick-prev {
+				position: absolute;
+				z-index: 1000;
+				top: 40%;
+				left: 10%;
+				color: transparent;
+				background-color: transparent;
+				outline: none;
+				border: none;
+
+				&::before {
+					content: url('/wp-content/uploads/2018/02/left-arrow-icon-50px.png');
+					cursor: pointer;
+				}
+			}
+			.slick-next {
+				position: absolute;
+				z-index: 1000;
+				left: 80%;
+				bottom: 35%;
+				color: transparent;
+				background-color: transparent;
+				outline: none;
+				border: none;
+
+				&::after {
+					content: url('/wp-content/uploads/2018/02/right-arrow-icon-50px.png');
+					cursor: pointer;
+				}
+			}
+		}
+	}	
+}

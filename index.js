@@ -4,6 +4,9 @@ const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 const session = require('express-session');
 const flash = require('connect-flash');
+//GETTING NODE SASS MIDDLEWARE
+const sassMiddleware = require('node-sass-middleware');
+const path = require('path');
 
 //BRING ROUTES
 const notes = require('./routes/notes');
@@ -11,9 +14,21 @@ const users = require('./routes/users');
 
 const app = express();
 
+//USING SASS MIDDLEWARE
+app.use(
+  sassMiddleware({
+    src: path.join(__dirname, '/_scss'),
+    dest: path.join(__dirname, '/public'),
+    debug: true
+  })
+);
+console.log(__dirname);
 //FOLLOWING REPLACES BODY PARSER IN EXPRESS 4+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+//STATIC PUBLIC FOLDER
+app.use(express.static(path.join(__dirname, 'public')));
 
 //METHOD OVERRIDE MIDDLEWARE
 app.use(methodOverride('_method'));

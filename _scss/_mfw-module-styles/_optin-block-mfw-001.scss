@@ -1,0 +1,38 @@
+/**
+ *
+ * Optin Block 001
+ *
+ */
+
+#optin-block-mfw-001 {
+	width: 100vw;
+ 	// height: 90vh;
+ 	background-color: darken($cg-primary, 20%); 
+ 	// border: 1rem solid red;
+ 	@media (max-width: 500px) {
+ 		width: 100%;
+ 		height: auto;
+ 	} 	
+
+ 	.block-content {
+ 		padding-top: 6rem;
+ 		padding-bottom: 6rem;
+ 		color: lighten($cg-secondary, 20%);
+
+ 		.block-title {
+ 			font-size: 4rem;
+ 			padding-bottom: 4rem;
+ 			color: lighten($cg-secondary, 10%);
+ 		}
+ 		.optin-content {
+ 			.optin-btn-holder {
+ 				.btn {
+ 					padding: .5rem 4rem;
+ 					border-radius: 50px;
+ 				}
+ 			}
+ 		}
+ 
+ 	}
+
+}

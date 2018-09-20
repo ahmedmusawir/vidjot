@@ -1,0 +1,108 @@
+/**
+ *
+ * STYLES: Archive Index Block 001 
+ *
+ */
+
+#archive-index-block-mfw-001 {
+ 	// width: 100vw;
+ 	// min-height: 350px;
+ 	// background-color: $cg-contact-bg;
+ 	// border: 1rem solid red;
+ 	// background: url('/wp-content/uploads/2018/02/lightpaperfibers.jpg') fixed;
+
+ 	.post-item {
+ 		text-align: center;
+ 		padding-top: 1rem;
+ 		padding-bottom: 4rem;
+
+ 		.featured-image-box {
+ 			overflow: hidden;
+
+			img {
+	 			// border: 1rem solid blue;
+				// width: 100%;
+			    @include transition-property(all);
+			    @include transition-duration(.5s);
+			    @include transition-timing-function(ease);		
+			    // @include transition-timing-function(ease-in-out);		
+				@include border-top-left-radius(45px);
+				@include border-bottom-right-radius(45px);			    
+
+				&:hover {
+					@include transform(scale(1.1));
+					// @include transform (rotate(10deg) scale(1) skew(-50deg) translate(100px) skew(-0deg, -0deg));
+					// @include transform(rotate(-135deg) skew(-10deg, -10deg));
+					opacity: .5;
+				}
+			}
+ 		}
+ 		.entry-title {
+ 			padding-top: 2rem;
+ 		}
+ 		.entry-meta {
+ 			padding-bottom: 2rem;
+
+ 			.posted-on {
+ 				// border: 1px solid red;
+ 				&:before {
+ 					font-family: 'FontAwesome';
+ 					content: "\f017";
+ 					color: $cg-secondary;
+ 					padding-right: .5rem;
+ 					padding-left: .5rem;
+ 				}
+ 			}
+
+ 			.byline {
+ 				// border: 1px solid red;
+ 				&:before {
+ 					font-family: 'FontAwesome';
+ 					content: "\f234";
+ 					color: $cg-secondary;
+ 					padding-right: .5rem;
+ 					padding-left: .5rem;
+ 				}
+ 			}
+ 		}
+ 	}
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

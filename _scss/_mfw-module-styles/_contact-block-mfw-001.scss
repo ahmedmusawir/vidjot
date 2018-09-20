@@ -1,0 +1,87 @@
+/**
+ *
+ * STYLES: Contact Block 001 
+ *
+ */
+
+#contact-block-mfw-001 {
+ 	width: 100vw;
+ 	background-color: $cg-contact-bg;
+ 	color: lighten($cg-secondary, 20%);
+ 	padding-top: 3rem;
+ 	padding-bottom: 6rem;
+
+ 	h1,h2,h3,h4,h5 {
+ 		color: lighten($cg-secondary, 20%);
+
+ 	}
+ 	p {
+ 		color: lighten($cg-secondary, 20%);
+
+ 	}
+	.left-content {
+		#wpcf7-f80-o1 {
+			.wpcf7-submit {
+				background-color: darken($cg-secondary, 10%);
+				color: white;
+				border-color: $cg-secondary;
+				border-radius: 30px;
+				padding: .5rem 4rem;
+			}
+			input[type="text"], textarea {
+
+			  background-color : darken($cg-secondary, 15%); 
+			  border-color: $cg-secondary;
+			  color: lighten($cg-secondary, 30%);
+
+			}	
+			input[type="email"], textarea {
+
+			  background-color : darken($cg-secondary, 15%); 
+			  border-color: $cg-secondary;
+			  color: lighten($cg-secondary, 30%);
+
+			}				
+		}
+	}
+
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

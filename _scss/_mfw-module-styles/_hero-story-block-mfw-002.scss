@@ -1,0 +1,80 @@
+/**
+ *
+ * STYLES: Hero Story Block 002 
+ *
+ */
+
+ #hero-story-block-mfw-002 {
+ 	width: 100vw;
+ 	height: 93vh;
+   -moz-box-shadow:    inset 0px 60px 180px #000000;
+   -webkit-box-shadow: inset 0px 60px 180px #000000;
+   box-shadow:         inset 0px 60px 180px #000000;	
+
+ 	.hero-info-box {
+		.card {
+	 		background-color: transparent;
+		 	// @include text-hide();
+			.card-block {
+				.card-content {
+					padding: 5rem;
+					padding-top: 18rem;
+				   	-moz-box-shadow:    inset 0px 40px 180px #000000;
+				   	-webkit-box-shadow: inset 0px 40px 180px #000000;
+				   	box-shadow:         inset 0px 40px 180px #000000;						
+					background-color: rgba(darken($cg-primary, 10%), .8);
+					
+				 	p {
+				 		font-size: 1rem;
+				 	}	
+				 	.btn {
+						@include border-radius($radius: 50px);
+						// margin-bottom: 3rem;
+				 	}
+				}		
+			}
+		}
+ 	}
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

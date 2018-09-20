@@ -1,0 +1,33 @@
+/**
+ *
+ * General Styles for Single Post or Page
+ *
+ */
+
+#general-page-header {
+
+
+   	img {
+		-moz-box-shadow: 0 6px 40px  lighten($black, 20%);
+		-webkit-box-shadow: 0 6px 40px  lighten($black, 20%);
+		box-shadow: 0 6px 40px  lighten($black, 20%);
+   	}
+}
+#primary {
+
+	
+}
+.content-area {
+	padding-top: 6rem;
+	padding-bottom: 4rem;
+
+	@media (max-width: 800px) {
+		// border: 4px solid red;
+		img {
+			display: block;
+			clear: both;
+			width: 100%;
+			padding-bottom: 2rem;
+		}
+	}
+}

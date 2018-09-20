@@ -1,0 +1,42 @@
+/**
+ *
+ * Info Block 001
+ *
+ */
+
+#info-block-mfw-001 {
+	width: 100vw;
+ 	height: 90vh;
+ 	background-color: $cg-extra-1; 
+ 	background: url('/wp-content/uploads/2018/02/home-info-bg.png');
+ 	
+ 	// border: 1rem solid red;
+ 	@media (max-width: 500px) {
+ 		width: 100%;
+ 		height: auto;
+ 	} 	
+
+ 	.block-content {
+ 		padding-top: 6rem;
+
+ 		.block-title {
+ 			font-size: 4rem;
+ 			padding-bottom: 4rem;
+ 		}
+ 		.left-content {
+
+ 			ul {
+ 				li {
+ 					padding-bottom: 2.5rem;
+
+ 					i {
+ 						font-size: 2rem;
+ 						color: $cg-primary;
+ 						padding-right: 2rem;
+ 					}
+ 				}
+ 			}
+ 		}
+ 	}
+
+}

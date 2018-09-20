@@ -1,0 +1,88 @@
+/**
+ *
+ * STYLES: Hero Block 002 
+ *
+ */
+
+#hero-block-mfw-002 {
+	// border: 1rem solid red;
+
+	#hero-content {
+	 	width: 100vw;
+	 	height: 93vh;
+		background-color: rgba(darken($cg-primary, 18%), .7);
+
+	}
+
+ 	.hero-info-box {
+		// border: 1rem solid red;
+		padding-top: 3rem;
+		font-family: $primary-font;
+		@include border-top-left-radius(45px);
+		@include border-bottom-right-radius(45px);
+		color: lighten($cg-secondary, 20%);
+		
+		.hero-title {
+			@media (min-width: 700px) {
+				font-size: 4.5rem;
+			}
+			@media (min-width: 900px) {
+				font-size: 6rem;
+			}
+		}
+		.lead {
+			color: lighten($cg-secondary, 20%);
+			padding-bottom: 3rem;
+			font-size: 2rem;
+			line-height: 2rem;
+		}
+		.hero-btn-holder {
+			.btn {
+				font-family: $secondary-font !important;
+				padding: .5rem 4rem;
+				border-radius: 50px;
+				margin-bottom: 2rem;
+			}
+		}
+
+ 	}
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

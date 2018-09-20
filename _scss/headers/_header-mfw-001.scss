@@ -1,0 +1,64 @@
+/**
+ *
+ * Header 001 Styles
+ *
+ */
+
+#header-mfw-001 {
+
+	.navbar {
+		background: darken($cg-primary, 15%);
+		// border: 1rem solid red;
+		.navbar-brand {
+			.logo {
+				position: absolute;
+				top: 0;
+				left: 0;
+
+				@media (max-width: 991px) {
+					// left: 80%;
+				}
+			}
+		}
+		.navbar-toggler {
+			border: 3px solid lighten($cg-primary, 20%);
+
+			.navbar-toggler-icon {
+				background-image: url('/wp-content/uploads/2018/02/new-nav-icon-40.png');
+			}
+		}
+		#navbar-content {
+			#primary-menu {
+				@media (max-width: 991px) {
+					padding-top: 5rem;
+				}
+
+				.menu-item {
+					padding-left: 1rem;
+					@media (max-width: 1200px) {
+						border-bottom: 1px solid $cg-secondary;
+						&:hover {
+							background-color: black;
+						}
+					}
+					a {
+						text-transform: uppercase;
+						color: lighten($cg-secondary, 10%);
+						&:hover {
+							color: lighten($cg-secondary, 20%);
+						}
+					}
+				}
+				.current-menu-item {
+					a {
+						color: lighten($cg-secondary, 30%);
+					}
+				}
+			}
+		}
+
+	}
+}
+
+
+

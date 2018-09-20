@@ -1,0 +1,83 @@
+/**
+ *
+ * Hero Block 001 Styles
+ *
+ */
+
+ #hero-block-mfw-001 {
+ 	width: 100vw;
+ 	height: 93vh;
+
+ 	.hero-info-box {
+		
+		.card {
+	 		// background-color: transparent;
+		 	@include text-hide();
+
+			.card-block {
+			 	.card-title {
+			 		background-color: lighten($cg-secondary, 40%);
+			 		width: 60%;
+			 		margin-bottom: -.35rem;
+			 		border: 1px solid $cg-primary;
+				 	@include caret-right();		
+				 	font-family: $secondary-font;
+				 	font-size: 1.3rem;
+					color: $cg-primary;				 	
+			 	}
+				.card-content {
+					background-color: rgba(darken($cg-primary, 10%), .87);
+				 	p {
+				 		font-size: 1rem;
+				 	}	
+				 	.btn {
+						@include border-radius($radius: 50px);
+				 		font-family: $secondary-font;
+				 	}
+				}		
+			}
+		}
+ 	}
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
