@@ -3,13 +3,18 @@ const exphbs = require('express-handlebars');
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 const session = require('express-session');
-const flash = require('connect-flash-plus');
+const flash = require('connect-flash');
+
+//BRING ROUTES
+const notes = require('./routes/notes');
+const users = require('./routes/users');
 
 const app = express();
 
 //FOLLOWING REPLACES BODY PARSER IN EXPRESS 4+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
 //METHOD OVERRIDE MIDDLEWARE
 app.use(methodOverride('_method'));
 //SESSION MIDDLEWARE
@@ -27,14 +32,13 @@ app.use(flash());
 //GLOBAL VARIABLES
 app.use(function(req, res, next) {
   res.locals.success_msg = req.flash('success_msg');
-  console.log(req.flash('success_msg'));
   res.locals.error_msg = req.flash('error_msg');
   res.locals.error = req.flash('error');
   next();
 });
 
 //GETS RID OF DEPRICATION WARNINGS
-// mongoose.Promise = global.Promise;
+mongoose.Promise = global.Promise;
 
 //CONNECTING TO MONGO DB WITH MONGOOSE
 mongoose
@@ -44,10 +48,6 @@ mongoose
   )
   .then(() => console.log('Connected to MongoDB ...'))
   .catch(err => console.error('Could not connect to MongoDB ...'));
-
-//LOAD NOTE MODEL
-require('./models/Notes');
-const Notes = mongoose.model('notes');
 
 //HANDLE BARS MIDDLEWARE
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
@@ -65,93 +65,11 @@ app.get('/', (req, res) => {
 app.get('/about', (req, res) => {
   res.render('about');
 });
-//NOTE LIST
-app.get('/notes', async (req, res) => {
-  const notes = await Notes.find().sort({ date: 'desc' });
-  res.render('notes/index', {
-    notes: notes
-  });
-});
-//ADD NOTE FORM
-app.get('/notes/add', (req, res) => {
-  res.render('notes/add');
-});
 
-//PROCESS FORM
-app.post('/notes', (req, res) => {
-  // console.log(req.body);
-  let errors = [];
+//USE ROUTES
+app.use('/notes', notes);
+app.use('/users', users);
 
-  if (!req.body.title) {
-    errors.push({ text: 'Please add a Title' });
-  }
-  if (!req.body.details) {
-    errors.push({ text: 'Please add a Snippet' });
-  }
-  if (errors.length > 0) {
-    res.render('notes/add', {
-      errors: errors,
-      title: req.body.title,
-      details: req.body.details
-    });
-  } else {
-    const newUser = {
-      title: req.body.title,
-      details: req.body.details
-    };
-    new Notes(newUser).save().then(note => {
-      // console.log(note);
-      req.flash('succss_msg', 'Note has been Posted');
-      console.log(req.flash('success_msg'));
-
-      res.redirect('/notes');
-    });
-  }
-});
-//EDIT NOTE FORM
-app.get('/notes/edit/:id', async (req, res) => {
-  const note = await Notes.findOne({ _id: req.params.id });
-  res.render('notes/edit', {
-    note: note
-  });
-});
-//UPDATE NOTE IN MONGO
-app.put('/notes/:id', async (req, res) => {
-  const note = await Notes.findByIdAndUpdate(
-    req.params.id,
-    {
-      title: req.body.title,
-      details: req.body.details
-    },
-    { new: true }
-  );
-  //If not existing, return 404 - Bad request
-  if (!note) return res.status(404).send('Note Not Found To Edit');
-
-  req.flash('succss_msg', 'Note has been Edited');
-
-  res.redirect('/notes');
-});
-//DELETE NOTE
-app.delete('/notes/:id', async (req, res) => {
-  Notes.remove({ _id: req.params.id }).then(() => {
-    console.log(req.flash('success_msg'));
-    req.flash('succss_msg', 'Note has been Removed');
-    res.redirect('/notes');
-  });
-});
-// //DELETE NOTE
-// app.delete('/notes/:id', async (req, res) => {
-//   //Look up the note & delete
-//   const note = await Notes.findByIdAndRemove(req.params.id);
-//   //Doesn't Exist, return 404
-//   if (!note) return res.status(404).send('Notes Not Found To Delete');
-
-//   //Flash message
-//   req.flash('succss_msg', 'Note has been Removed');
-//   //Return the index page
-//   res.redirect('/notes');
-// });
 const port = 5001;
 
 app.listen(port, () => {
