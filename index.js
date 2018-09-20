@@ -22,7 +22,6 @@ app.use(
     debug: true
   })
 );
-console.log(__dirname);
 //FOLLOWING REPLACES BODY PARSER IN EXPRESS 4+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

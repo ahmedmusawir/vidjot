@@ -5,11 +5,13 @@
       <h3 class="text-center text-secondary">
         Account Register
       </h3>
-      <form action="">
-        <input type="text" name="name" id="name" class="form-control mb-2" placeholder="Enter Your Name" />
-        <input type="email" name="email" id="email" class="form-control mb-2" placeholder="Enter Email Address" />
-        <input type="password" name="password" id="password" class="form-control mb-2" placeholder="Enter Password" />
-        <input type="password" name="password2" id="password2" class="form-control mb-2" placeholder="Verify Password" />
+      <form action="/users/register" method="post">
+        <input type="text" name="name" id="name" class="form-control mb-2" placeholder="Enter Your Name" value="{{name}}" />
+        <input type="email" name="email" id="email" class="form-control mb-2" placeholder="Enter Email Address" value="{{email}}" />
+        <input type="password" name="password" id="password" class="form-control mb-2" placeholder="Enter Password"
+          value="{{password}}" />
+        <input type="password" name="password2" id="password2" class="form-control mb-2" placeholder="Verify Password"
+          value="{{password2}}" />
         <input type="submit" value="Submit" class="btn btn-secondary btn-block">
       </form>
     </div>

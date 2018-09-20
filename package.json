@@ -5,6 +5,7 @@
   "repository": "https://github.com/ahmedmusawir/vidjot.git",
   "license": "MIT",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "connect-flash": "^0.1.1",
     "connect-flash-plus": "^0.2.1",
     "express": "^4.16.3",
