@@ -1,4 +1,9 @@
+{{!-- PASSPORT GENERATED ERRORS --}}
+{{#if error}}
+<div class="alert alert-danger text-center col-md-6 mx-auto">{{error}}</div>
+{{/if}}
+{{!-- CUSTOM MOOSE ERRORS --}}
 {{#each errors}}
-<div class="alert alert-danger text-center">{{text}}</div>
+<div class="alert alert-danger text-center col-md-6 mx-auto">{{text}}</div>
 {{else}}
 {{/each}}

@@ -2,22 +2,30 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
-// const passport = require('passport');
+const passport = require('passport');
 
 //USER MODEL
 require('../models/Users');
 const User = mongoose.model('users');
 
-//USER LOGIN ROUTE
+//USER LOGIN FORM ROUTE
 router.get('/login', (req, res) => {
   res.render('users/login');
 });
-//USER REGISTRATION ROUTE
+//USER LOGIN FORM POST METHOD
+router.post('/login', (req, res, next) => {
+  passport.authenticate('local', {
+    successRedirect: '/notes',
+    failureRedirect: '/users/login',
+    failureFlash: true
+  })(req, res, next);
+});
+
+//USER REGISTRATION FORM ROUTE
 router.get('/register', (req, res) => {
   res.render('users/register');
 });
-
-//USER POST REGISTRATION ROUTE
+//USER REGISTRATION FORM POST METHOD
 router.post('/register', (req, res) => {
   let errors = [];
 
@@ -59,6 +67,13 @@ router.post('/register', (req, res) => {
       });
     });
   }
+});
+
+//USER LOGOUT ROUTE
+router.get('/logout', (req, res) => {
+  req.logout();
+  req.flash('success_msg', 'You are logged out');
+  res.redirect('/users/login');
 });
 
 module.exports = router;

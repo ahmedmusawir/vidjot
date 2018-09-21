@@ -7,10 +7,15 @@ const flash = require('connect-flash');
 //GETTING NODE SASS MIDDLEWARE
 const sassMiddleware = require('node-sass-middleware');
 const path = require('path');
+//GETTING PASSPORT
+const passport = require('passport');
 
 //BRING ROUTES
 const notes = require('./routes/notes');
 const users = require('./routes/users');
+
+//PASSPORT CONFIG
+require('./config/passport')(passport);
 
 const app = express();
 
@@ -31,6 +36,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //METHOD OVERRIDE MIDDLEWARE
 app.use(methodOverride('_method'));
+
 //SESSION MIDDLEWARE
 app.use(
   session({
@@ -40,16 +46,31 @@ app.use(
     cookie: { maxAge: 60000 }
   })
 );
+
+//PASSPORT INITIALIZE - MUST BE PLACED UNDER SESSION MIDDLEWARE
+app.use(passport.initialize());
+app.use(passport.session());
+
 //FLASH MESSEGING MIDDLEWARE
 app.use(flash());
 
 //GLOBAL VARIABLES
-app.use(function(req, res, next) {
+app.use((req, res, next) => {
   res.locals.success_msg = req.flash('success_msg');
   res.locals.error_msg = req.flash('error_msg');
   res.locals.error = req.flash('error');
+  res.locals.user = req.user || null;
   next();
 });
+
+// //GLOBAL VARIABLES
+// app.use(function(req, res, next) {
+//   res.locals.success_msg = req.flash('success_msg');
+//   res.locals.error_msg = req.flash('error_msg');
+//   res.locals.error = req.flash('error');
+//   res.locals.user = req.user || null;
+//   next();
+// });
 
 //GETS RID OF DEPRICATION WARNINGS
 mongoose.Promise = global.Promise;

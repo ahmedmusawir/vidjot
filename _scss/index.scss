@@ -5,10 +5,15 @@
 
 /*=====  End of GLOBALS  ======*/
 /*=======================================
-=            HEADER & FOOTER            =
+=            LOGIN OUT FORM            =
 =======================================*/
-
-/*=====  End of HEADER & FOOTER  ======*/
+.login-out-form {
+  .card.card-body {
+    background-color: #e9ecef;
+    box-shadow: 2px 2px 6px gray;
+  }
+}
+/*=====  End of LOGIN OUT FROM  ======*/
 
 /** THE BODY ===========================  */
 // ul,

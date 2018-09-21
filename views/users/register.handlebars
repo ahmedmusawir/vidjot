@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row login-out-form">
   <div class="col-md-6 mx-auto">
     <div class="card card-body">
       <h1 class="text-center"><i class="fa fa-google-wallet fa-3x" aria-hidden="true"></i></h1>
@@ -6,8 +6,10 @@
         Account Register
       </h3>
       <form action="/users/register" method="post">
-        <input type="text" name="name" id="name" class="form-control mb-2" placeholder="Enter Your Name" value="{{name}}" />
-        <input type="email" name="email" id="email" class="form-control mb-2" placeholder="Enter Email Address" value="{{email}}" />
+        <input type="text" name="name" id="name" class="form-control mb-2" placeholder="Enter Your Name" value="{{name}}"
+          required />
+        <input type="email" name="email" id="email" class="form-control mb-2" placeholder="Enter Email Address" value="{{email}}"
+          required />
         <input type="password" name="password" id="password" class="form-control mb-2" placeholder="Enter Password"
           value="{{password}}" />
         <input type="password" name="password2" id="password2" class="form-control mb-2" placeholder="Verify Password"
