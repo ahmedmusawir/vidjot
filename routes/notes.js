@@ -9,7 +9,9 @@ const Notes = mongoose.model('notes');
 
 //NOTE LIST
 router.get('/', ensureAuthenticated, async (req, res) => {
-  const notes = await Notes.find().sort({ date: 'desc' });
+  const notes = await Notes.find({ user: req.user.id }).sort({
+    date: 'desc'
+  });
   res.render('notes/index', {
     notes: notes
   });
@@ -39,7 +41,8 @@ router.post('/', ensureAuthenticated, (req, res) => {
   } else {
     const newUser = {
       title: req.body.title,
-      details: req.body.details
+      details: req.body.details,
+      user: req.user.id
     };
     new Notes(newUser).save().then(note => {
       req.flash('success_msg', 'Note has been Posted');
@@ -50,9 +53,15 @@ router.post('/', ensureAuthenticated, (req, res) => {
 });
 //EDIT NOTE FORM
 router.get('/edit/:id', ensureAuthenticated, async (req, res) => {
-  const note = await Notes.findOne({ _id: req.params.id });
-  res.render('notes/edit', {
-    note: note
+  const note = await Notes.findOne({ _id: req.params.id }).then(note => {
+    if (note.user != req.user.id) {
+      req.flash('error_msg', 'Not Authorized');
+      res.redirect('/notes');
+    } else {
+      res.render('notes/edit', {
+        note: note
+      });
+    }
   });
 });
 //UPDATE NOTE IN MONGO

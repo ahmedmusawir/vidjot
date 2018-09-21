@@ -24,7 +24,7 @@ app.use(
   sassMiddleware({
     src: path.join(__dirname, '/_scss'),
     dest: path.join(__dirname, '/public'),
-    debug: true
+    debug: false
   })
 );
 //FOLLOWING REPLACES BODY PARSER IN EXPRESS 4+
@@ -42,8 +42,8 @@ app.use(
   session({
     secret: 'secret',
     resave: true,
-    saveUninitialized: true,
-    cookie: { maxAge: 60000 }
+    saveUninitialized: true
+    // cookie: { maxAge: 60000 }
   })
 );
 
